@@ -14,16 +14,14 @@ class BreakReminder:
         self.root.grid_columnconfigure(0, weight=1)
 
     def display(self):
-        """Starts the Tkinter event loop."""
         self.root.mainloop()
 
     def stop(self):
-        """Stop the reminder loop and close the window."""
+        
         self.running_status = False
         self.root.quit()  # Stop the event loop, effectively ending the program
 
     def start(self):
-        """Create and display the reminder window."""
         self.setup()
         banner = tk.Label(self.root, text="Take Break Srinadh!", font=("Arial", 50, "bold italic"))
         banner.grid(row=0, column=0, pady=100)
@@ -40,7 +38,7 @@ class BreakReminder:
         self.display()
 
     def run(self):
-        """Runs the loop, showing reminders every 5 seconds until stopped."""
+        
         while self.running_status:
             self.root = tk.Tk()  # Create a new root window for each reminder
             self.start()  # Show the reminder window
